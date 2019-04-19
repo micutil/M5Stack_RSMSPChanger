@@ -3,7 +3,8 @@
 MSPChanger for M5Stackは、双葉さんのRS304系のサーボのコンプライアンスマージン、コンプライアンススロープ、パンチの設定を変更するためのM5Stackのプログラムです。このプログラムはSD-UploaderまたはLovyanLaouncherに対応していて、起動にはこれらもインストールされている必要があります。
 
 使い方の簡単な動画は以下のURLをみて下さい。
-https://www.youtube.com/watch?v=G_qbhUKBMIw
+[![preview](images/preview01s.png)](https://www.youtube.com/watch?v=G_qbhUKBMIw)
+
 
 ## インストール
 1. M5Stackに入れるmicroSDに、同梱のMSPChanger.binファイルをコピーして下さい。
