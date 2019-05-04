@@ -7,7 +7,8 @@ MSPChanger for M5Stackは、双葉さんのRS304系のサーボのコンプラ�
 
 
 ## インストール
-1. M5Stackに入れるmicroSDに、同梱のMSPChanger.binファイルをコピーして下さい。
+1. 「Clone or download」（緑色のボタン）でDownload ZIPを選び、ダウンロードし、zipを解凍します。
+2. M5Stackに入れるmicroSDに、同梱のMSPChanger.binファイルをコピーして下さい。
 2. FONT.BIN, FONTLCD.BINをまだ入れてない場合は、以下の手順で入れて下さい。
 3. ブラウザで、https://github.com/Tamakichi/Arduino-KanjiFont-Library-SD を開きます。
 4. 「Clone or download」でDownload ZIPを選び、ダウンロードする。
