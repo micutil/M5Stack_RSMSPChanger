@@ -72,3 +72,8 @@ int fontDump(uint16_t x, uint16_t y, char* pUTF8, uint8_t sz, uint32_t fntcol, b
 
   return (x + mojisu * sz);
 }
+
+int fontDumpCenter(uint16_t x, uint16_t y, char* pUTF8, uint8_t n, uint8_t sz, uint32_t fntcol, bool fontfileOpenClose) {
+  x=x-(n*sz)/2;
+  fontDump(x,y,pUTF8,sz,fntcol,fontfileOpenClose);
+}
