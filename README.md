@@ -1,14 +1,16 @@
-# M5Stack_RSMSPChanger
+# RSMSPChanger (1.1)
 
-MSPChanger for M5Stackは、双葉さんのRS304系のサーボのコンプライアンスマージン、コンプライアンススロープ、パンチの設定を変更するためのM5Stackのプログラムです。このプログラムはSD-UploaderまたはLovyanLaouncherに対応していて、起動にはこれらもインストールされている必要があります。
+MSPChangerは、双葉さんのRS304系のサーボのコンプライアンスマージン、コンプライアンススロープ、パンチの設定を変更するためのM5Stackのプログラムです。このプログラムはSD-UploaderまたはLovyanLaouncherに対応していて、起動にはこれらもインストールされている必要があります。
 
 使い方の簡単な動画は以下のURLをみて下さい。
 [![preview](images/preview01s.png)](https://www.youtube.com/watch?v=G_qbhUKBMIw)
 
+## 更新
+- スリープ対応 (v1.1)
+- Odroid-GOに対応 (v1.1)
 
 ## インストール
-1. 「Clone or download」（緑色のボタン）でDownload ZIPを選び、ダウンロードし、zipを解凍します。
-2. M5Stackに入れるmicroSDに、同梱のMSPChanger.binファイルをコピーして下さい。
+1. microSDに、同梱のMSPChanger.binファイル（およびjpg, jsonフォルダ）をコピーして下さい。
 2. FONT.BIN, FONTLCD.BINをまだ入れてない場合は、以下の手順で入れて下さい。
 3. ブラウザで、https://github.com/Tamakichi/Arduino-KanjiFont-Library-SD を開きます。
 4. 「Clone or download」でDownload ZIPを選び、ダウンロードする。
@@ -68,7 +70,7 @@ SD-Menu (SD-Uploader)からRSMSPChangerを選択して起動させて下さい�
 まだ入れてない方は以下の手順でドライバーや、SD-Menuをインストールして下さい。
 
 ### USBドライバーをインストールする
-M5Stackをコンピュータと繋いで、プログラムの転送など通信するためには、Silicon LabsのUSBDriverをインストールする必要があります。もしまだインストールしてなければ
+M5StackまたはOdroid-GOをコンピュータと繋いで、プログラムの転送など通信するためには、Silicon LabsのUSBDriverをインストールする必要があります。もしまだインストールしてなければ
 [シリアル接続の確立方法](https://docs.m5stack.com/#/ja/related_documents/establish_serial_connection)
 のサイトを参考にしてインストールして下さい。
 
@@ -77,15 +79,15 @@ M5Stackをコンピュータと繋いで、プログラムの転送など通信�
 ![セキュリティ](images/kyoka.jpg)
 
 ### M5Burner_Micで、M5StackにSD-Menuをインストールする
-"M5Burner\_Mic"というプログラムでSD-MenuをM5Stackにインストールします。すでにSD-MenuまたはLovyanLauncherをインストールしてある場合はこのステップは必要ありません。
+"M5Burner\_Mic"というプログラムでSD-MenuをM5StackまたはOdroid-GOにインストールします。すでにSD-MenuまたはLovyanLauncherをインストールしてある場合はこのステップは必要ありません。
 
 1. [M5Burner_Mic](https://github.com/micutil/M5Burner_Mic) のページから「Download [here](http://micutil.com/download/M5Burner_Mic.zip)」の所でM5Burner\_Micをダウンロードし、解凍して下さい。M5Burner\_Micフォルダはお好みの場所に入れて下さい。
-2. M5Stackに付いてきたUSB-CケーブルでパソコンとM5Stackを繋げて下さい。
+2. USBケーブルでパソコンとM5StackまたはOdroid-GOを繋げて下さい。
 3. M5Burner\_Micをダブルクリックして起動します。
-4. USBシリアルポートをM5Stackのポートに設定します。
+4. USBシリアルポートをM5StackまたはOdroid-GOのポートに設定します。
  - Macの場合はポートに名前がつくので「**SLAB_USBtoUART**」という名前のポートを選んで下さい。
  - Windowsの場合は、**COM3**とか、COM4とかの名前になっています。ひとつしか表示されてなかったら、それがM5Stackのポートでしょう。もしいくつか表示されているようだったら、コントロールパネルから、デバイスマネージャーのポートをみて番号を確認して下さい。例えば以下の図の場合だと**COM4**であるということになります。<br>![ポート番号](images/portnum.jpg)
-5. 「Priset」のポップアップメニューで「**SD-Menu**」の最新版を選択します。
+5. 「Priset」のポップアップメニューでM5Stack用またはOdroid-GO用の「**SD-Menu**」の最新版を選択します。
 6. 「**Start**」ボタンをクリックすると、プログラムの転送が開始します。
 7. プログラムの転送が終わるとM5Stackがリセットされ、インストールした**SD-Menu**が起動します。
 8. メニューからRSMSPChangerを選択して、起動させます。
@@ -103,7 +105,16 @@ IDは255を選ぶと、全てのサーボが対象になりますので、複数
 #### 変更を保存
 設定値は変更しただけで、ROMに書き込まれていませんので、「書換え」ボタンを押して書き換えを行って下さい。この時に電源が切れるとサーボが壊れるかもしれませんのでちゃんと電源を接続して行って下さい。
 
-## 問い合わせ
+## 履歴
+	ver 1.1: 2019/ 5/29 ODROID-GO対応/スリープ対応
+	ver 1.0: 2019/ 4/ 7
+
+## ライセンス
+CC 4.0 BY Micono (https://github.com/micutil/M5Stack_RSTester)
+
+- 同梱されている書類すべてに関して、無断転載、無断掲載を禁じます。
+- これらを使ったことにより生じるいかなるトラブルに関しても自己責任においておこなって下さい。
+
 
 同梱されている書類すべてに関して、無断転載、掲載、改変を禁じます。
 これらを使ったことにより生じるいかなるトラブルに関しても自己責任においておこなって下さい。
