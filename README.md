@@ -10,11 +10,36 @@ MSPChangerは、双葉さんのRS304系のサーボのコンプライアンス�
 - Odroid-GOに対応 (v1.1)
 
 ## インストール
-1. microSDに、同梱のMSPChanger.binファイル（およびjpg, jsonフォルダ）をコピーして下さい。
+1. microSDフォルダの中のファイルをmicroSDにコピーして下さい。
 2. FONT.BIN, FONTLCD.BINをまだ入れてない場合は、以下の手順で入れて下さい。
 3. ブラウザで、https://github.com/Tamakichi/Arduino-KanjiFont-Library-SD を開きます。
 4. 「Clone or download」でDownload ZIPを選び、ダウンロードする。
 ダウンロードしたファイルの中に、fontbinというフォルダがあり、その中にFONT.BIN, FONTLCD.BINというファイルがあるので、これら２つのファイルをmicroSDにコピーします。
+
+### Launcherによる起動
+
+- microSDフォルダの中のファイルをmicroSDのルートにコピー
+- microSDをM5StackまたはOdroid-GOにセット
+- [LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)でプログラムF/Wを選択して読み込む.
+- もしOdroid-GOメニューコントロールを使っている場合の操作は以下を見て下さい.
+
+### ビルド済みファイル
+- in M5_Gamebin ... 4M minimal SPIFFS partition scheme.
+- in MD_Gamebin ... 4M default partition scheme.
+- in MF_Gamebin ... Fire defaut partition scheme.
+- in OG_Gamebin ... bin file for Odroid-GO.
+- in odroid/firmwares ... fw file for Odroid-GO Menu Control.
+
+##### ODROID-GO Device Firmware Menu Controls
+
+	1. 電源スイッチ OFF
+	2. Bボタンを押したまま, 電源スイッチ On
+	3. メニューが表示されたらBボタンを離す
+
+	アプリケーションF/Wの起動
+	- A ボタン: アプリケーションF/Wを選択
+	- B ボタン: キャンセル
+	- Start ボタン: アプリケーションF/Wの書き込み
 
 ## 接続
 M5Stackとサーボをジャンパーワイヤなどでつなぎます。
@@ -66,7 +91,7 @@ M5Stackとサーボをジャンパーワイヤなどでつなぎます。
 
 
 ## MSPChangerを起動
-SD-Menu (SD-Uploader)からRSMSPChangerを選択して起動させて下さい。<br>
+LovyanLauncher, SD-Menu (SD-Uploader)または、Odroid-GO device firmware menu controlからRSMSPChangerを選択して起動させて下さい。<br>
 まだ入れてない方は以下の手順でドライバーや、SD-Menuをインストールして下さい。
 
 ### USBドライバーをインストールする
