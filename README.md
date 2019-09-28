@@ -18,13 +18,6 @@ MSPChangerは、双葉さんのRS304系のサーボのコンプライアンス�
 4. 「Clone or download」でDownload ZIPを選び、ダウンロードする。
 ダウンロードしたファイルの中に、fontbinというフォルダがあり、その中にFONT.BIN, FONTLCD.BINというファイルがあるので、これら２つのファイルをmicroSDにコピーします。
 
-## Launcherによる起動
-
-- microSDフォルダの中のファイルをmicroSDのルートにコピー
-- microSDをM5StackまたはOdroid-GOにセット
-- [LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)でプログラムF/Wを選択して読み込む.
-- もしOdroid-GOメニューコントロールを使っている場合の操作は以下を見て下さい.
-
 ### ビルド済みファイル
 - in M5_Gamebin ... 4M minimal SPIFFS partition scheme.
 - in MF_Gamebin ... Fire defaut partition scheme.
