@@ -31,19 +31,6 @@ MSPChangerは、双葉さんのRS304系のサーボのコンプライアンス�
 - in OG_Gamebin ... bin file for Odroid-GO.
 - in odroid/firmwares ... fw file for Odroid-GO Menu Control.
 
-##### ODROID-GO Device Firmware Menu Controls
-
-microSDの作成：[Skeleton file](https://wiki.odroid.com/odroid_go/make_sd_card)
-
-	1. 電源スイッチ OFF
-	2. Bボタンを押したまま, 電源スイッチ On
-	3. メニューが表示されたらBボタンを離す
-
-	アプリケーションF/Wの起動
-	- A ボタン: アプリケーションF/Wを選択
-	- B ボタン: キャンセル
-	- Start ボタン: アプリケーションF/Wの書き込み
-
 ## 接続
 M5Stackとサーボをジャンパーワイヤなどでつなぎます。
 
@@ -118,7 +105,23 @@ M5StackまたはOdroid-GOをコンピュータと繋いで、プログラムの�
 5. 「Priset」のポップアップメニューで「**LovyanLauncher......**」を選択します。
 6. 「**Start**」ボタンをクリックすると、プログラムの転送が開始します。
 7. プログラムの転送が終わるとM5StackまたはOdroid-GOは、リセットされ、インストールした**LovyanLauncher**が起動します。
-8. LovyanLauncherのメニューの**SD-Updater**を選択するとmicroSDに入ってるプログラムの一覧が表示されます。目的のプログラムを選択して、起動して下さい。
+
+#### LovyanLauncherの操作
+	1. メニューの**SD-Updater**を選択して"OK"
+	2. microSDに入ってるプログラムの一覧が表示されます。
+	3. 目的のプログラムを探して選択し、"OK"
+	4. 起動する場合は、"Execute"
+
+#### ODROID-GO Device Firmware Menu Controlsの操作
+
+	1. 電源スイッチ OFF
+	2. Bボタンを押したまま, 電源スイッチ On
+	3. メニューが表示されたらBボタンを離す
+
+	アプリケーションF/Wの起動
+	- A ボタン: アプリケーションF/Wを選択
+	- B ボタン: キャンセル
+	- Start ボタン: アプリケーションF/Wの書き込み
 
 ## 設定変更
 コンプライアンスマージン、コンプライアンススロープ、パンチ、サーボのIDの順で設定していきます。MSPChangerが起動し、両端のボタンで設定値を変えて、真ん中のOKボタンを押すと、次、次と、設定項目が変更していきます。
