@@ -1,6 +1,8 @@
 # RSMSPChanger (1.1)
 
-MSPChangerは、双葉さんのRS304系のサーボのコンプライアンスマージン、コンプライアンススロープ、パンチの設定を変更するためのM5Stackのプログラムです。このプログラムはSD-UploaderまたはLovyanLaouncherに対応していて、起動にはこれらもインストールされている必要があります。
+MSPChangerは、双葉さんのRS304系のサーボのコンプライアンスマージン、コンプライアンススロープ、パンチの設定を変更するためのM5StackまたはOdroid-GOのプログラムです。[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)に対応していて、microSDからの起動には[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)もインストールされている必要があります。
+
+**注意：Odroid-GOメニューを使う場合（初期状態の場合）は[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)のインストールは必要はありません。microSDには[Skeleton file](https://wiki.odroid.com/odroid_go/make_sd_card)を使います。**
 
 使い方の簡単な動画は以下のURLをみて下さい。
 [![preview](images/preview01s.png)](https://www.youtube.com/watch?v=G_qbhUKBMIw)
@@ -12,11 +14,11 @@ MSPChangerは、双葉さんのRS304系のサーボのコンプライアンス�
 ## インストール
 1. microSDフォルダの中のファイルをmicroSDにコピーして下さい。
 2. FONT.BIN, FONTLCD.BINをまだ入れてない場合は、以下の手順で入れて下さい。
-3. ブラウザで、https://github.com/Tamakichi/Arduino-KanjiFont-Library-SD を開きます。
+3. ブラウザで、[Arduino-KanjiFont-Library-SD](https://github.com/Tamakichi/Arduino-KanjiFont-Library-SD) を開きます。
 4. 「Clone or download」でDownload ZIPを選び、ダウンロードする。
 ダウンロードしたファイルの中に、fontbinというフォルダがあり、その中にFONT.BIN, FONTLCD.BINというファイルがあるので、これら２つのファイルをmicroSDにコピーします。
 
-### Launcherによる起動
+## Launcherによる起動
 
 - microSDフォルダの中のファイルをmicroSDのルートにコピー
 - microSDをM5StackまたはOdroid-GOにセット
@@ -25,12 +27,13 @@ MSPChangerは、双葉さんのRS304系のサーボのコンプライアンス�
 
 ### ビルド済みファイル
 - in M5_Gamebin ... 4M minimal SPIFFS partition scheme.
-- in MD_Gamebin ... 4M default partition scheme.
 - in MF_Gamebin ... Fire defaut partition scheme.
 - in OG_Gamebin ... bin file for Odroid-GO.
 - in odroid/firmwares ... fw file for Odroid-GO Menu Control.
 
 ##### ODROID-GO Device Firmware Menu Controls
+
+microSDの作成：[Skeleton file](https://wiki.odroid.com/odroid_go/make_sd_card)
 
 	1. 電源スイッチ OFF
 	2. Bボタンを押したまま, 電源スイッチ On
@@ -90,33 +93,32 @@ M5Stackとサーボをジャンパーワイヤなどでつなぎます。
 **M5Stack RSTester専用アンダプターに関してのご質問、ご希望等は、miconoまで、問い合わせください。**
 
 
-## MSPChangerを起動
-LovyanLauncher, SD-Menu (SD-Uploader)または、Odroid-GO device firmware menu controlからRSMSPChangerを選択して起動させて下さい。<br>
-まだ入れてない方は以下の手順でドライバーや、SD-Menuをインストールして下さい。
-
-### USBドライバーをインストールする
+## USBドライバーをインストールする
 M5StackまたはOdroid-GOをコンピュータと繋いで、プログラムの転送など通信するためには、Silicon LabsのUSBDriverをインストールする必要があります。もしまだインストールしてなければ
 [シリアル接続の確立方法](https://docs.m5stack.com/#/ja/related_documents/establish_serial_connection)
-のサイトを参考にしてインストールして下さい。
+のサイトを参考にしてインストールして下さい。**Odroid-GOメニューを使う場合は必ずしもドライバーのインストールをする必要はありません**
 
 > なお、Macの場合、インストールしただけではセキュリティが通ってないので、インストール後、環境設定のセキュリティとプライバシーの一般で、インストールしたドライバーの許可をして下さい。
 > 
 ![セキュリティ](images/kyoka.jpg)
 
-### M5Burner_Micで、M5StackにSD-Menuをインストールする
-"M5Burner\_Mic"というプログラムでSD-MenuをM5StackまたはOdroid-GOにインストールします。すでにSD-MenuまたはLovyanLauncherをインストールしてある場合はこのステップは必要ありません。
+## M5Burner_Micで、LovyanLauncherをインストール
+**Odroid-GOメニューを使う場合はこの操作を行ってはいけません!!!**
 
-1. [M5Burner_Mic](https://github.com/micutil/M5Burner_Mic) のページから「Download [here](http://micutil.com/download/M5Burner_Mic.zip)」の所でM5Burner\_Micをダウンロードし、解凍して下さい。M5Burner\_Micフォルダはお好みの場所に入れて下さい。
+"[M5Burner_Mic](https://github.com/micutil/M5Burner_Mic)"というプログラムで[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)をM5StackまたはOdroid-GOにインストールする方法を説明します。
+
+1. [M5Burner_Mic](https://github.com/micutil/M5Burner_Mic) のページから「Download [here](http://micutil.com/download/M5Burner_Mic.zip)」の所でM5Burner\_Micをダウンロードし、解凍して下さい。M5Burner\_Micフォルダはお好みの場所に入れて下さい（**フルパスに日本語名を含まない場所に置くのが無難です**）。
+2. M5Stackにインストールする場合：[LovyanLauncher firmware](https://github.com/lovyan03/LovyanLauncher-firmware)のページから「Clone or download」のボタンでダウンロードし解凍。LovyanLauncher-firmware-masterフォルダをM5Burner\_Micのフォルダの中にあるfirmwaresフォルダにコピーして下さい。
+3. Odroid-GOにインストールする場合：[Odroid-GO版のLovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher/blob/master/LovyanLauncher/build_odroid_go/LovyanLauncher.bin)のページの「Download」ボタンをクリックするとダウンロードできます。ダウンロードしたLovyanLauncher.binは、M5Burner\_Mic起動後、M5Burner\_Micのウインドウに**ドラッグ＆ドロップ**して下さい。
 2. USBケーブルでパソコンとM5StackまたはOdroid-GOを繋げて下さい。
 3. M5Burner\_Micをダブルクリックして起動します。
 4. USBシリアルポートをM5StackまたはOdroid-GOのポートに設定します。
  - Macの場合はポートに名前がつくので「**SLAB_USBtoUART**」という名前のポートを選んで下さい。
  - Windowsの場合は、**COM3**とか、COM4とかの名前になっています。ひとつしか表示されてなかったら、それがM5Stackのポートでしょう。もしいくつか表示されているようだったら、コントロールパネルから、デバイスマネージャーのポートをみて番号を確認して下さい。例えば以下の図の場合だと**COM4**であるということになります。<br>![ポート番号](images/portnum.jpg)
-5. 「Priset」のポップアップメニューでM5Stack用またはOdroid-GO用の「**SD-Menu**」の最新版を選択します。
+5. 「Priset」のポップアップメニューで「**LovyanLauncher......**」を選択します。
 6. 「**Start**」ボタンをクリックすると、プログラムの転送が開始します。
-7. プログラムの転送が終わるとM5Stackがリセットされ、インストールした**SD-Menu**が起動します。
-8. メニューからRSMSPChangerを選択して、起動させます。
-9. microSDにmenu.binが入ってない場合は、M5Burner_Micのfirmwaresフォルダの中のtobozoフォルダの中に**menu.bin**があるので、それをmicroSDにコピーして下さい。
+7. プログラムの転送が終わるとM5StackまたはOdroid-GOは、リセットされ、インストールした**LovyanLauncher**が起動します。
+8. LovyanLauncherのメニューの**SD-Updater**を選択するとmicroSDに入ってるプログラムの一覧が表示されます。目的のプログラムを選択して、起動して下さい。
 
 ## 設定変更
 コンプライアンスマージン、コンプライアンススロープ、パンチ、サーボのIDの順で設定していきます。MSPChangerが起動し、両端のボタンで設定値を変えて、真ん中のOKボタンを押すと、次、次と、設定項目が変更していきます。
